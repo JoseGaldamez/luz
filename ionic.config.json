@@ -1,0 +1,7 @@
+{
+  "name": "luz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
