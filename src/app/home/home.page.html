@@ -1,20 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Luz Application
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-row>
+      <ion-col>
+        <ion-icon *ngIf="isActive" name="radio-button-on-outline" size="large"></ion-icon>
+        <ion-icon *ngIf="!isActive" name="radio-button-off-outline" size="large"></ion-icon>
+        <h2>Enciende/Apaga la Luz</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-toggle (ionChange)="toggleLuz()"></ion-toggle>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p *ngIf="isActive">Luz Encendida</p>
+        <p *ngIf="!isActive">Luz Apagada</p>
+      </ion-col>
+    </ion-row>
+
   </div>
 </ion-content>
